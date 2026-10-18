@@ -101,10 +101,10 @@ async def on_message(message):
     if message.author != client.user:
         if "stinky" in message.content.lower():
             response_options = [
-                "thats right! octo is super stinky!",
+                f"thats right! {octo.mention} is super stinky!",
                 "ditto isnt stinky at all!",
-                "octo is the most stinky!",
-                "ewwwww octo stinky af",
+                f"{octo.mention} is the most stinky!",
+                f"ewwwww {octo.mention} stinky af",
             ]
             response = random.choice(response_options)
             await message.reply(response)
