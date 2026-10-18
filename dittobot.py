@@ -74,7 +74,7 @@ async def on_message(message):
                 await member.add_roles(bad_ditto, reason="Entered The Road")
                 await member.add_roles(law_disobeyer, reason="Entered The Road")
                 await member.remove_roles(good_ditto, reason="Entered The Road")
-                await the_road.send(f"# {member.mention} YOU HAVE ENTERED THE ROAD")
+                await the_road.send(f"# {member.mention} YOU HAVE ENTERED THE ROAD.")
             except discord.Forbidden:
                 print("no perms to update roles")
             except discord.HTTPException as e:
