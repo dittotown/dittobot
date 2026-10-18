@@ -118,6 +118,9 @@ async def on_message(message):
                 await message.add_reaction("😺")
                 await message.add_reaction("😻")
                 await message.reply("thank you so much for the pato pic")
+                # Write the message link to the file
+                with open("pato-pics.txt", "a", encoding="utf-8") as f:
+                    f.write(message.jump_url + "\n")
     
     # Check if it's a DM (no guild)
     if message.guild is None and message.author.id != client.user.id:
@@ -210,6 +213,27 @@ async def sendchannel(interaction: discord.Interaction, channel_id: str, message
         await interaction.response.send_message(
             f"Failed to send: {e}", ephemeral=True
         )
+
+# random pato command
+@tree.command(name="pato", description="Get a random pato picture!")
+async def pato(interaction: discord.Interaction):
+    try:
+        with open("pato-pics.txt", "r", encoding="utf-8") as f:
+            links = [line.strip() for line in f if line.strip()]
+    except FileNotFoundError:
+        await interaction.response.send_message(
+            "no pato pics file :(", ephemeral=True
+        )
+        return
+
+    if not links:
+        await interaction.response.send_message(
+            "no pato pics :(", ephemeral=True
+        )
+        return
+
+    link = random.choice(links)
+    await interaction.response.send_message("Here's a random picture of Pato! " + link)
 
 # RUN BOT #
 
