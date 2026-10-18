@@ -91,7 +91,7 @@ async def on_message(message):
             #     "https://tenor.com/view/happy-cat-gif-10804346947536782797",
             #     "meowmeowmeow",
             # ]
-            response = random.choice(response_options)
+            # response = random.choice(response_options)
             await message.add_reaction("🐈")
             # await message.add_reaction("😺")
             # await message.add_reaction("😻")
