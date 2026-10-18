@@ -97,6 +97,18 @@ async def on_message(message):
             await message.add_reaction("😻")
             await message.reply(response)
 
+    # stinky mention
+    if message.author != client.user:
+        if "stinky" in message.content.lower():
+            response_options = [
+                "thats right! octo is super stinky!",
+                "ditto isnt stinky at all!",
+                "octo is the most stinky!",
+                "ewwwww octo stinky af",
+            ]
+            response = random.choice(response_options)
+            await message.reply(response)
+
     # pato pic by octo
     if message.channel.id == PATO and message.author == octo and len(message.attachments) != 0:
         attached = message.attachments
