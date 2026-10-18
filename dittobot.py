@@ -83,19 +83,19 @@ async def on_message(message):
     # pato mention
     if message.author != client.user:
         if "pato" in message.content.lower():
-            response_options = [
-                "# OMG PATO THE CUTIEEEEE!",
-                "i love pato",
-                "pato cutest kitty",
-                "kitty.....",
-                "https://tenor.com/view/happy-cat-gif-10804346947536782797",
-                "meowmeowmeow",
-            ]
+            # response_options = [
+            #     "# OMG PATO THE CUTIEEEEE!",
+            #     "i love pato",
+            #     "pato cutest kitty",
+            #     "kitty.....",
+            #     "https://tenor.com/view/happy-cat-gif-10804346947536782797",
+            #     "meowmeowmeow",
+            # ]
             response = random.choice(response_options)
             await message.add_reaction("🐈")
-            await message.add_reaction("😺")
-            await message.add_reaction("😻")
-            await message.reply(response)
+            # await message.add_reaction("😺")
+            # await message.add_reaction("😻")
+            # await message.reply(response)
 
     # stinky mention
     if message.author != client.user:
